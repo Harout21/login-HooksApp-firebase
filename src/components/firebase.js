@@ -3,13 +3,15 @@ import 'firebase/auth'
 import 'firebase/firebase-firestore'
 
 const config = {
-	apiKey: "AIzaSyAk0794OsQuDuoEdUfF9nUM_zD17lfRXEE",
-	authDomain: "codedamn-socialapp.firebaseapp.com",
-	databaseURL: "https://codedamn-socialapp.firebaseio.com",
-	projectId: "codedamn-socialapp",
-	storageBucket: "codedamn-socialapp.appspot.com",
-	messagingSenderId: "263473733320"
-}
+	apiKey: "AIzaSyDugXlggxSTYl5-YKsQ-9XDi5yv9AjNDig",
+	authDomain: "authenticationusinghooks.firebaseapp.com",
+	databaseURL: "https://authenticationusinghooks.firebaseio.com",
+	projectId: "authenticationusinghooks",
+	storageBucket: "authenticationusinghooks.appspot.com",
+	messagingSenderId: "245383997715",
+	appId: "1:245383997715:web:96c3a796ad64b3867692e6",
+	measurementId: "G-QZHQLDC6JY"
+};
 
 class Firebase {
 	constructor() {
@@ -33,13 +35,13 @@ class Firebase {
 		})
 	}
 
-	addQuote(quote) {
+	addComment(comment) {
 		if(!this.auth.currentUser) {
 			return alert('Not authorized')
 		}
 
-		return this.auth.currentUser ? this.db.doc(`users_codedamn_video/${this.auth.currentUser.uid}`).set({
-			quote
+		return this.auth.currentUser ? this.db.doc(`users_authenticationusinghooks/${this.auth.currentUser.uid}`).set({
+			comment
 		})  : ""
 	}
 
@@ -53,9 +55,9 @@ class Firebase {
 		return this.auth.currentUser && this.auth.currentUser.displayName
 	}
 
-	async getCurrentUserQuote() {
-		const quote = await this.db.doc(`users_codedamn_video/${this.auth.currentUser.uid}`).get();
-		return  quote.get('quote')
+	async getCurrentUserComment() {
+		const comment = await this.db.doc(`users_authenticationusinghooks/${this.auth.currentUser.uid}`).get();
+		return  comment.get('comment')
 	}
 }
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Typography, Paper, Avatar, CircularProgress, Button } from '@material-ui/core'
+import {Typography, Paper, Avatar, CircularProgress, Button, Input} from '@material-ui/core'
 import VerifiedUserOutlined from '@material-ui/icons/VerifiedUserOutlined'
 import withStyles from '@material-ui/core/styles/withStyles'
 import firebase from '../firebase'
@@ -36,22 +36,26 @@ const styles = theme => ({
 function Dashboard(props) {
 	const { classes } = props
 
-	const [quote, setQuote] = useState('')
-
-
+	const [comment, setComment] = useState('');
+	const [editComment , setEditedComment] = useState('');
 
 	useEffect(() => {
+		setEditedComment('');
 		if(firebase.getCurrentUsername()){
-			firebase.getCurrentUserQuote().then(setQuote)
+			firebase.getCurrentUserComment().then(setComment)
 		}
-	},[])
+	},[]);
+
+	function handleComentsChange(comment) {
+		firebase.addComment(editComment);
+		setComment(comment);
+	}
 
 	if(!firebase.getCurrentUsername()) {
 		// not logged in
-		alert('Please login first')
+		alert('Please login first');
 		props.history.replace('/login')
 	}
-
 	return (
 		<main className={classes.main}>
 			<Paper className={classes.paper}>
@@ -61,9 +65,12 @@ function Dashboard(props) {
 				<Typography component="h1" variant="h5">
 					Hello { firebase.getCurrentUsername() }
 				</Typography>
-				<Typography component="h1" variant="h5">
-					Your quote: {quote ? `"${quote}"` : <CircularProgress size={20} />}
+				<Typography component="h1" variant="h6">
+					Your comment: {comment ? `"${comment}"` : <CircularProgress size={20} />}
 				</Typography>
+				<Input autoComplete="off" value={editComment} onChange={e => setEditedComment(e.target.value)} placeholder="Change it"/>
+				<br/>
+				<Button color="inherit" variant="contained" type="submit" onClick={()=>handleComentsChange(editComment)}>Submit Comment</Button>
 				<Button
 					type="submit"
 					fullWidth

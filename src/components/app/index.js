@@ -8,8 +8,18 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import { CssBaseline, CircularProgress } from '@material-ui/core'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import firebase from '../firebase'
+import purple from '@material-ui/core/colors/purple';
+import green from '@material-ui/core/colors/green';
 
-const theme = createMuiTheme()
+const theme = createMuiTheme({
+	palette: {
+		primary: purple,
+		secondary: green,
+	},
+	status: {
+		danger: 'orange',
+	},
+});
 
 export default function App() {
 
