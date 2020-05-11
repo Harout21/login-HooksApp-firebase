@@ -39,7 +39,6 @@ const styles = theme => ({
 
 function SignIn(props) {
 	const { classes } = props
-
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 
@@ -65,7 +64,7 @@ function SignIn(props) {
 						type="submit"
 						fullWidth
 						variant="contained"
-						color="primary"
+						color="secondary"
 						onClick={login}
 						className={classes.submit}>
 						Sign in
@@ -74,7 +73,7 @@ function SignIn(props) {
 						type="submit"
 						fullWidth
 						variant="contained"
-						color="secondary"
+						color="default"
 						component={Link}
 						to="/register"
 						className={classes.submit}>
@@ -87,8 +86,9 @@ function SignIn(props) {
 
 	async function login() {
 		try {
-			await firebase.login(email, password)
-			firebase.getCurrentUsername()
+			await firebase.login(email, password);
+			firebase.getCurrentUsername();
+			sessionStorage.setItem('token', firebase.auth.currentUser.refreshToken);
 			props.history.replace('/dashboard')
 		} catch(error) {
 			alert(error.message)

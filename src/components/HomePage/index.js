@@ -1,8 +1,9 @@
 import React from 'react'
-import {Button} from '@material-ui/core'
 import withStyles from '@material-ui/core/styles/withStyles'
 import firebase from "../firebase";
 import 'firebase/auth'
+import NeonClock from "../clock/clock";
+import './home.css'
 
 const styles = theme => ({
 	main: {
@@ -33,28 +34,32 @@ const styles = theme => ({
 })
 
 function HomePage(props) {
-	const { classes } = props;
 	if(!firebase.getCurrentUsername()){
 		props.history.replace('/register')
 	}
 
 	return (
 	<>
-		<h1>Home</h1>
-		<h3>whats on your mind</h3>
-		<Button
-			type="submit"
-			fullWidth
-			variant="contained"
-			color="secondary"
-			onClick={logout}
-			className={classes.submit}>
-			Logout
-		</Button>
+		<div className="home-text">
+			<h1>Home {firebase.getCurrentUsername()}</h1>
+			<h3>What`s On Your Mind Today ?</h3>
+		</div>
+		<div className="btn-div-home">
+			<button
+				type="submit"
+				variant="contained"
+				onClick={logout}
+				className="button">
+				Logout
+			</button>
+		</div>
+		{
+			firebase.getCurrentUsername() ? <NeonClock/> :""
+		}
 	</>
-	)
+	);
 	async function logout() {
-		await firebase.logout()
+		await firebase.logout();
 		props.history.push('/login')
 	}
 }

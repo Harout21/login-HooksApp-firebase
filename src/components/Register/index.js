@@ -75,7 +75,7 @@ function Register(props) {
 						type="submit"
 						fullWidth
 						variant="contained"
-						color="primary"
+						color="default"
 						onClick={onRegister}
 						className={classes.submit}>
 						Register

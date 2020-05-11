@@ -1,0 +1,41 @@
+
+.home-text{
+  color: bisque;
+text-align: center;
+  width: auto;
+  background: #090710;
+}
+.home-text h3 {
+  font-size: 25px;
+  color: #ff4343;
+  font-family: "Baskerville Old Face";
+}
+.btn-div-home{
+background-color: #090710;
+  width: auto;
+}
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px 0 743px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 960px) {
+  .home-text{
+    text-align: center;
+    width: auto;
+  }
+  .btn-div-home{
+    width: auto;
+    justify-content: center;
+  }.button{
+       margin: 4px 2px 0 250px;
+     }
+}

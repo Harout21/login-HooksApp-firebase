@@ -35,7 +35,6 @@ const styles = theme => ({
 
 function Dashboard(props) {
 	const { classes } = props
-
 	const [comment, setComment] = useState('');
 	const [editComment , setEditedComment] = useState('');
 
@@ -73,7 +72,6 @@ function Dashboard(props) {
 				<Button color="inherit" variant="contained" type="submit" onClick={()=>handleComentsChange(editComment)}>Submit Comment</Button>
 				<Button
 					type="submit"
-					fullWidth
 					variant="contained"
 					color="secondary"
 					onClick={logout}
@@ -82,9 +80,7 @@ function Dashboard(props) {
           		</Button>
 				<Button
 					type="submit"
-					fullWidth
 					variant="contained"
-					color="primary"
 					onClick={()=>props.history.push('/')}
 					className={classes.submit}>
 					home
@@ -94,7 +90,8 @@ function Dashboard(props) {
 	)
 
 	async function logout() {
-		await firebase.logout()
+		await firebase.logout();
+		sessionStorage.removeItem('token');
 		props.history.push('/register')
 	}
 }
