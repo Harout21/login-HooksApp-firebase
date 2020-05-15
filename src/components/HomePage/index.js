@@ -60,6 +60,7 @@ function HomePage(props) {
 	);
 	async function logout() {
 		await firebase.logout();
+		sessionStorage.removeItem('token');
 		props.history.push('/login')
 	}
 }

@@ -81,7 +81,7 @@ function Dashboard(props) {
 				<Button
 					type="submit"
 					variant="contained"
-					onClick={()=>props.history.push('/')}
+					onClick={()=>props.history.push('/home')}
 					className={classes.submit}>
 					home
           		</Button>

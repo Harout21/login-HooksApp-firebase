@@ -6,7 +6,7 @@ import Register from '../Register'
 import Dashboard from '../Dashboard'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import { CssBaseline, CircularProgress } from '@material-ui/core'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route,Redirect } from 'react-router-dom'
 import firebase from '../firebase'
 import purple from '@material-ui/core/colors/purple';
 import green from '@material-ui/core/colors/green';
@@ -39,12 +39,11 @@ export default function App() {
 			<CssBaseline />
 			<Router>
 				<Switch>
-					{
-						!sessionStorage.getItem('token') ? <Route exact path="/register" component={Register} /> :
-							<Route exact path="/" component={HomePage} />
-					}
+					<Route exact path="/register" component={Register}/>
+					<Route exact path="/home" component={HomePage}/>
 					<Route exact path="/login" component={Login} />
 					<Route exact path="/dashboard" component={Dashboard} />
+					<Redirect from="*" to="/register"/>
 				</Switch>
 			</Router>
 		</MuiThemeProvider>
