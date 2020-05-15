@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    height: 100%;
+    font-size: 100%;
+    overflow: hidden;
+}
+.title {
+    display: flex;
+    /* height: 100px;
+     */
+    align-items: flex-end;
+    /* justify-content: space-around;
+     */
+    margin-left: 32px;
+    color: white;
+}
+.logo {
+    width: 100px;
+}
+.text {
+    align-self: center;
+    margin: auto;
+    margin-left: 350px;
+}
+.backgroundLogin {
+    background-size: cover;
+    background: url("https://uploads.codesandbox.io/uploads/user/06adff00-d320-4e9b-af24-9c518e944c52/nqY6-login-background.jpg");
+    background-repeat: no-repeat;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 75%;
+}
+.LoginBox {
+    position: absolute;
+    max-width: 350px;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.187rem 1.875rem 2.062rem 1.875rem;
+    top: 50%;
+    left: 50%;
+    height: 400px;
+    transform: translate(-50%, -50%);
+}
+.LoginBox .mercury-logologin {
+    background-repeat: no-repeat;
+    display: block;
+    width: 230px;
+    height: 60px;
+    margin: 0.875rem auto 0;
+}
+.LoginBox .UserLogin {
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #575674;
+    line-height: 1.062rem;
+}
+.LoginBox .UserLogin .control-Element {
+    display: block;
+    margin-top: 0.875rem;
+    margin-bottom: 0.437rem;
+}
+.LoginBox .UserLogin .login-control {
+    background: #eeeef1;
+    border-radius: 4px;
+    border: 0 none;
+    padding: 0.75rem 0.625rem;
+    width: 100%;
+    color: #575674;
+    font-size: 0.875rem;
+}
+.LoginBox .UserLogin .login-control:focus {
+    outline: none;
+    border: 0 none;
+}
+.LoginBox .submitLogin {
+    display: block;
+    margin-top: 1.475rem;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 0 none;
+    background: #575674;
+    color: #fff;
+    padding: 10px 0;
+}
+.LoginBox .submitLogin:focus {
+    outline: none;
+    border: 0 none;
+}
+.LoginBox .Login-forgetRegister {
+    display: block;
+    margin-top: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    line-height: 17px;
+    color: #575674;
+    padding-left: 4px;
+}
+.LoginBox .Login-forgetRegister .registerUser, .LoginBox .Login-forgetRegister .forgetPassword {
+    color: darkred;
+}
+.LoginBox .Login-forgetRegister .registerUser:hover, .LoginBox .Login-forgetRegister .forgetPassword:hover {
+    text-decoration: none;
+}
+.mercuryCopyright {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 2px;
+}
+.mercuryCopyLeft {
+    float: left;
+}
+.mercuryCopyLeft a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.75rem;
+    padding-right: 10px;
+    float: left;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+.mercuryCopyRight {
+    float: right;
+    color: #fff;
+    font-size: 0.75rem;
+    line-height: 18px;
+}
+.mercuryCopyRight a {
+    text-decoration: none;
+    color: #f83;
+}
+.clear {
+    clear: both;
+}
+@media only screen and (max-width: 800px) {
+    html {
+        font-size: 80%;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .mercuryCopyLeft {
+        float: none;
+        text-align: center;
+    }
+    .mercuryCopyLeft a {
+        float: none;
+    }
+    .mercuryCopyRight {
+        float: none;
+        text-align: center;
+        margin-top: 5px;
+    }
+}
+.mytext{
+    color: yellowgreen;
+}
+.mytitle{
+    color: #ff8833;
+}

@@ -1,43 +1,9 @@
 import React, { useState } from 'react'
-import { Typography, Paper, Avatar, Button, FormControl, Input, InputLabel } from '@material-ui/core'
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
-import withStyles from '@material-ui/core/styles/withStyles'
 import { Link, withRouter } from 'react-router-dom'
 import firebase from '../firebase'
-const styles = theme => ({
-	main: {
-		width: 'auto',
-		display: 'block', // Fix IE 11 issue.
-		marginLeft: theme.spacing (3),
-		marginRight: theme.spacing (3),
-		[theme.breakpoints.up(400 + theme.spacing (3,2))]: {
-			width: 400,
-			marginLeft: 'auto',
-			marginRight: 'auto',
-		},
-	},
-	paper: {
-		marginTop: theme.spacing (8),
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
-		padding: `${theme.spacing (2)}px ${theme.spacing (3)}px ${theme.spacing (3)}px`,
-	},
-	avatar: {
-		margin: theme.spacing(1),
-		backgroundColor: theme.palette.secondary.main,
-	},
-	form: {
-		width: '100%', // Fix IE 11 issue.
-		marginTop: theme.spacing(1),
-	},
-	submit: {
-		marginTop: theme.spacing (3),
-	},
-})
+import './register.css'
 
 function Register(props) {
-	const { classes } = props
 
 	const [name, setName] = useState('')
 	const [email, setEmail] = useState('')
@@ -45,62 +11,43 @@ function Register(props) {
 	const [comment, setComment] = useState('')
 
 	return (
-		<main className={classes.main}>
-			<Paper className={classes.paper}>
-				<Avatar className={classes.avatar}>
-					<LockOutlinedIcon />
-				</Avatar>
-				<Typography component="h1" variant="h5">
-					Register Account
-       			</Typography>
-				<form className={classes.form} onSubmit={e => e.preventDefault() && false }>
-					<FormControl margin="normal" required fullWidth>
-						<InputLabel htmlFor="name">Name</InputLabel>
-						<Input id="name" name="name" autoComplete="off" autoFocus value={name} onChange={e => setName(e.target.value)} />
-					</FormControl>
-					<FormControl margin="normal" required fullWidth>
-						<InputLabel htmlFor="email">Email Address</InputLabel>
-						<Input id="email" name="email" autoComplete="off" value={email} onChange={e => setEmail(e.target.value)}  />
-					</FormControl>
-					<FormControl margin="normal" required fullWidth>
-						<InputLabel htmlFor="password">Password</InputLabel>
-						<Input name="password" type="password" id="password" autoComplete="off" value={password} onChange={e => setPassword(e.target.value)}  />
-					</FormControl>
-					<FormControl margin="normal" required fullWidth>
-						<InputLabel htmlFor="comment">Your Favorite Comment</InputLabel>
-						<Input name="comment" type="text" id="comment" autoComplete="off" value={comment} onChange={e => setComment(e.target.value)}  />
-					</FormControl>
+		<>
+			<form  className="login-form" onSubmit={e => e.preventDefault() && false }>
+				<h1 className="mytitle">Register</h1>
+				<h2 className="mytext">Welcome To My App Cute</h2>
 
-					<Button
-						type="submit"
-						fullWidth
-						variant="contained"
-						color="default"
-						onClick={onRegister}
-						className={classes.submit}>
-						Register
-          			</Button>
+				<div className="txtb">
+					<input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Username"/>
+				</div>
 
-					<Button
-						type="submit"
-						fullWidth
-						variant="contained"
-						color="secondary"
-						component={Link}
-						to="/login"
-						className={classes.submit}>
-						Go back to Login
-          			</Button>
-				</form>
-			</Paper>
-		</main>
-	)
+				<div className="txtb">
+					<input type="text" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" />
+				</div>
+
+				<div className="txtb">
+					<input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
+				</div>
+
+				<div className="txtb">
+					<input type="text" value={comment} onChange={e => setComment(e.target.value)} placeholder="Comment" />
+				</div>
+
+				<button type="submit" className="logbtn" onClick={onRegister}> Register</button>
+
+				<div className="bottom-text">
+					You have Already Account? <Link type="submit"
+													to="/login">Go to Login</Link>
+				</div>
+			</form>
+		</>
+	);
 
 	async function onRegister() {
 		try {
 			await firebase.register(name, email, password);
 			await firebase.addComment(comment);
 			firebase.getCurrentUsername();
+			sessionStorage.setItem("token",firebase.auth.currentUser.refreshToken);
 			props.history.replace('/dashboard')
 		} catch(error) {
 			alert(error.message)
@@ -108,4 +55,4 @@ function Register(props) {
 	}
 }
 
-export default withRouter(withStyles(styles)(Register))
+export default withRouter(Register)

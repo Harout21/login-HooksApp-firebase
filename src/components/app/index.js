@@ -11,6 +11,7 @@ import firebase from '../firebase'
 import purple from '@material-ui/core/colors/purple';
 import green from '@material-ui/core/colors/green';
 import red from '@material-ui/core/colors/red';
+import PrivateRoute from "../../routes/privateRoute";
 
 const theme = createMuiTheme({
 	palette: {
@@ -40,9 +41,9 @@ export default function App() {
 			<Router>
 				<Switch>
 					<Route exact path="/register" component={Register}/>
-					<Route exact path="/home" component={HomePage}/>
 					<Route exact path="/login" component={Login} />
-					<Route exact path="/dashboard" component={Dashboard} />
+					<PrivateRoute exact path="/home" component={HomePage}/>
+					<PrivateRoute exact path="/dashboard" component={Dashboard}/>
 					<Redirect from="*" to="/register"/>
 				</Switch>
 			</Router>
