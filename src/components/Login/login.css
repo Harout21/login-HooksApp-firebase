@@ -28,7 +28,7 @@ body, html {
 }
 .backgroundLogin {
     background-size: cover;
-    background: url("https://uploads.codesandbox.io/uploads/user/06adff00-d320-4e9b-af24-9c518e944c52/nqY6-login-background.jpg");
+    background: url("../../img/1.jpg");
     background-repeat: no-repeat;
     min-height: 100%;
     width: 100%;
