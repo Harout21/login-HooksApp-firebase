@@ -1,14 +1,12 @@
 import React from "react";
-import Dashboard from "../Dashboard";
+import Dashboard from "../Dashboard/dashboard";
 import HomePage from "../HomePage";
 
 const PrivateLayout = (props) => {
     return (
         <>
             {
-
                     <HomePage/>
-
             }
         </>
     )

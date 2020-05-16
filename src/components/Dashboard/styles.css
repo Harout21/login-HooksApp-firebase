@@ -1,0 +1,185 @@
+/* Reset CSS */
+
+@font-face {
+  font-family: "InterBold";
+  src: url("./fonts/Inter-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "InterMedium";
+  src: url("./fonts/Inter-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "InterSemiBold";
+  src: url("./fonts/Inter-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "InterRegular";
+  src: url("./fonts/Inter-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "InterThin";
+  src: url("./fonts/Inter-Thin-BETA.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "InterLight";
+  src: url("./fonts/Inter-Light-BETA.woff2") format("woff2");
+}
+
+body {
+  margin: 0;
+  background-color: #121212;
+  color: whitesmoke;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background: #bd4444;
+  cursor: pointer;
+  color: whitesmoke;
+}
+
+button:focus {
+  outline: none;
+}
+
+svg {
+  /* fix SVG flickering in Safari */
+  -webkit-transform: translateZ(0);
+}
+
+/* Generic */
+
+.border-top,
+.border-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.padding-h40 {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.subtitle {
+  color: #8492a6 !important;
+}
+
+.overflow-hidden {
+  /* safari overflow fix */
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+}
+
+/* Media Queries inside Page: if .open-drawer -> calc(100vw - (382px + 56px)) */
+/* Parent -> Child element so appart might be bad for performance. Use Redux */
+
+/* page padding */
+
+.padding-h40,
+.page__header,
+.body__container {
+  background-color: #262626;
+  transition: padding 0.15s cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+@media screen and (max-width: 965px) {
+  .open-drawer .padding-h40 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .open-drawer .page__header {
+    padding: 0 8px;
+  }
+
+  .open-drawer .body__container {
+    padding: 24px 16px 24px 15px;
+  }
+
+  .open-drawer .grid {
+    grid-gap: 16px;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .padding-h40 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .page .page__header {
+    padding: 0 8px;
+  }
+
+  .page__body .body__container {
+    padding: 24px 16px 24px 15px;
+  }
+
+  .page__body .grid {
+    grid-gap: 16px;
+  }
+}
+.haro{
+  width: 100px;
+  height: 100px;
+}
+
+/* dynamic Header buttons */
+
+.dynamic-button .button {
+  display: flex;
+}
+
+.dynamic-button .button--icon {
+  display: none;
+}
+
+@media screen and (max-width: 1354px) {
+  .open-drawer .dynamic-button .button {
+    display: none;
+  }
+
+  .open-drawer .dynamic-button .button--icon {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1028px) {
+  .dynamic-button .button {
+    display: none;
+  }
+
+  .dynamic-button .button--icon {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1104px) {
+  .open-drawer .page__header .action:not(:last-child) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 778px) {
+  .page__header .action:not(:last-child) {
+    display: none;
+  }
+}

@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import firebase from '../firebase'
 import './register.css'
+import  Typewriter from '../writerReg/writer'
+
 
 function Register(props) {
 
@@ -13,7 +15,7 @@ function Register(props) {
 	return (
 		<>
 			<form  className="login-form" onSubmit={e => e.preventDefault() && false }>
-				<h1 className="mytitle">Register</h1>
+				<h1 className="mytitle"><Typewriter/></h1>
 				<h2 className="mytext">Welcome To My App Cute</h2>
 
 				<div className="txtb">

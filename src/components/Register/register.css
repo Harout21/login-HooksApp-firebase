@@ -6,12 +6,12 @@
 }
 body {
     min-height: 100vh;
-    background: url("https://uploads.codesandbox.io/uploads/user/06adff00-d320-4e9b-af24-9c518e944c52/nqY6-login-background.jpg");
+    background: url("../../img/1.jpg");
 }
 body .login-form {
     width: 360px;
     background: #f1f1f1;
-    height: 600px;
+    height: 620px;
     padding: 5px 40px;
     border-radius: 10px;
     position: absolute;
@@ -24,7 +24,7 @@ body .login-form h1 {
     margin-bottom: 60px;
 }
 body .login-form .txtb {
-    border-bottom: 2px solid #adadad;
+    border-bottom: 2px solid darkred;
     position: relative;
     margin: 30px 0;
 }

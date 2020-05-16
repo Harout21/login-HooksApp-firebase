@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import firebase from '../firebase'
 import './login.css'
+import Typewriter from "./writerSign/writer";
+
 
 
 function SignIn(props) {
@@ -19,31 +21,32 @@ function SignIn(props) {
 						className="logo"
 						src="http://www.bits-dubai.ac.ae/intranet/i/Tagline_colored.png"
 					/>
-					<h2 className="text">Made By Haro21</h2>
+					<h2 className="my-title-haro21">Made By Haro21</h2>
 				</div>
 
 				<div className="LoginBox">
 					<div className="mercury-logologin">
-						<h3 className="mytext">We Are Happy To See You </h3>
+						<h3 className="mytext"><Typewriter/> </h3>
 					</div>
 					<form onSubmit={e => e.preventDefault() && false}>
 						<div className="UserLogin">
 							<label htmlFor="userName" className="control-Element">
-								Login
-							</label>
 							<input className="login-control"
 								id="email" name="email" autoComplete="off" autoFocus value={email}
-								onChange={e => setEmail(e.target.value)}
+								placeholder="Email"
+								   onChange={e => setEmail(e.target.value)}
 							/>
+							</label>
 						</div>
 						<div className="UserLogin">
 							<label htmlFor="userpassword" className="control-Element">
-								Password
-							</label>
 							<input className="login-control"
 								name="password" type="password" id="password" autoComplete="off" value={password}
+							    placeholder="Password"
 								onChange={e => setPassword(e.target.value)}
 							/>
+							</label>
+
 						</div>
 						<button
 							type="submit"

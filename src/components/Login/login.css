@@ -48,7 +48,7 @@ body, html {
     padding: 1.187rem 1.875rem 2.062rem 1.875rem;
     top: 50%;
     left: 50%;
-    height: 400px;
+    height: 356px;
     transform: translate(-50%, -50%);
 }
 .LoginBox .mercury-logologin {
@@ -76,7 +76,7 @@ body, html {
     padding: 0.75rem 0.625rem;
     width: 100%;
     color: #575674;
-    font-size: 0.875rem;
+    font-size: 20px;
 }
 .LoginBox .UserLogin .login-control:focus {
     outline: none;
@@ -102,7 +102,7 @@ body, html {
 }
 .LoginBox .Login-forgetRegister {
     display: block;
-    margin-top: 12px;
+    margin-top: 32px;
     font-size: 0.75rem;
     font-weight: bold;
     line-height: 17px;
@@ -169,7 +169,10 @@ body, html {
 }
 .mytext{
     color: yellowgreen;
+    font-size: 18px;
+    text-align: center;
 }
-.mytitle{
-    color: #ff8833;
+.my-title-haro21{
+    color: cornflowerblue;
+    margin-left: 50px;
 }
