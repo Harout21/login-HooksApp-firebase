@@ -183,3 +183,10 @@ svg {
     display: none;
   }
 }
+.input-comment-hj{
+  text-align: center;
+  width: 200px;
+  height: 30px;
+  border: 2px solid grey;
+  border-radius: 20px;
+}

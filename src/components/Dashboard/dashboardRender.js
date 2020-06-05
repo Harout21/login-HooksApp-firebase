@@ -3,6 +3,8 @@ import Page from "./Page";
 import SideBar from "./SideBar";
 import styled from "styled-components";
 import "./styles.css";
+import {withRouter} from "react-router-dom";
+
 
 const StyledApp = styled.div`
   position: absolute;
@@ -13,17 +15,15 @@ const StyledApp = styled.div`
 const DashboardRender = (props) => {
     const [openDrawer, updateDrawer] = useState(false);
 
-
     const toggleDrawer = () => {
         updateDrawer(!openDrawer);
     };
 
-
     return (
         <StyledApp className={`app-wrapper${openDrawer ? " open-drawer" : ""}`}>
-            <SideBar openDrawer={openDrawer} toggleDrawer={toggleDrawer} />
-            <Page openDrawer={openDrawer} history={props} />
+            <SideBar openDrawer={openDrawer} toggleDrawer={toggleDrawer}/>
+            <Page openDrawer={openDrawer} history={props}/>
         </StyledApp>
     );
-}
-export default DashboardRender
+};
+export default withRouter(DashboardRender)

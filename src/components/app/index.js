@@ -6,8 +6,8 @@ import Register from '../Register'
 import { BrowserRouter as Router, Switch, Route,Redirect } from 'react-router-dom'
 import firebase from '../firebase'
 import PrivateRoute from "../../routes/privateRoute";
-import {MetroSpinner} from "react-spinners-kit";
 import DashboardRender from "../Dashboard/dashboardRender";
+import Loading from "../loading/Loading";
 
 
 export default function App() {
@@ -30,9 +30,5 @@ export default function App() {
 					<Redirect from="*" to="/register"/>
 				</Switch>
 			</Router>
-	) : <div id="loader"><MetroSpinner
-		size={50}
-		color="white"
-		loading={true}
-	/></div>
+	) : <div id="loader"><Loading/></div>
 }

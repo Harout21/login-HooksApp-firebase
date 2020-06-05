@@ -1,4 +1,4 @@
-export const encrypt = (key, value) => {
+export const encrypto = (key, value) => {
     const Cryptr = require('cryptr');
     const cryptr = new Cryptr();
     return sessionStorage.setItem(key, cryptr.encrypt(value))

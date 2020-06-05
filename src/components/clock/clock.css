@@ -66,8 +66,8 @@ span.glow {
     top: -14px;
     left: -14px;
     display: block;
-    width: 320px;
-    height: 320px;
+    width: 313px;
+    height: 307px;
     border-radius: 50%;
     border: 4px dotted red;
     transition: all 0.5s cubic-bezier(0.6, -0.51, 0.5, 1.51);

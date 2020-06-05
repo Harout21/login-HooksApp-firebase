@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import firebase from '../firebase'
 import './login.css'
@@ -75,10 +75,11 @@ function SignIn(props) {
 			await firebase.login(email, password);
 			firebase.getCurrentUsername();
 			sessionStorage.setItem('token', firebase.auth.currentUser.refreshToken);
-			props.history.replace('/dashboard')
+
 		} catch(error) {
 			alert(error.message)
 		}
+		props.history.replace('/dashboard')
 	}
 }
 
