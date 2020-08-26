@@ -23,7 +23,7 @@ function Register(props) {
 				</div>
 
 				<div className="txtb">
-					<input type="text" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" />
+					<input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" />
 				</div>
 
 				<div className="txtb">

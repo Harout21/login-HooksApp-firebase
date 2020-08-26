@@ -10,3 +10,7 @@ export const decryptCryptr = (key) => {
     const value = sessionStorage.getItem(key);
     return value ? cryptr.decrypt(value) : "";
 };
+export const emailIsValid = (email) => {
+    const reg = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/;
+    return reg.test(email)
+};
