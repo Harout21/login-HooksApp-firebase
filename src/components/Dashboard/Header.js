@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import {Link} from 'react-router-dom'
 import styled from "styled-components";
 import Button from "./Button";
 import firebase from '../firebase'
@@ -42,7 +43,6 @@ const StyledHeader = styled.header`
 
 
 const Header = ({avatar, hidden, ...props}) => {
-
 
     const [comment, setComment] = useState('');
     const [editComment, setEditedComment] = useState('');
@@ -105,14 +105,17 @@ const Header = ({avatar, hidden, ...props}) => {
                     <input  className="input-comment-hj" autoComplete="off" value={editComment} onChange={e => setEditedComment(e.target.value)}
                             onKeyDown={(e)=>handleKeyDown(e)}   placeholder="Change it"/>
                 </li>
+                <Link
+                to= {"/home"}
+                >
                 <Button
                     style={{marginRight: "20px", backgroundColor: "red"}}
                     type="submit"
                     variant="contained"
-                    onClick={() => props.history.history.history.push('/home')}
                     className="button button--transparent">
                     Home
                 </Button>
+                </Link>
                 <Button
                     style={{backgroundColor: "navy"}}
                     type="submit"
