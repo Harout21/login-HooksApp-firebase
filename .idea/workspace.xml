@@ -13,7 +13,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Dashboard/Header.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
@@ -21,6 +21,27 @@
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Login/writerSign/writer.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Login/writerSign/writer.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -73,7 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>standard-clock</find>
       <find>encrypt</find>
       <find>MetroSpinner</find>
       <find>&lt;Button</find>
@@ -103,6 +123,7 @@
       <find>/home</find>
       <find>history</find>
       <find>link</find>
+      <find>typewriter__type</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -117,7 +138,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/app/index.jsx" />
         <option value="$PROJECT_DIR$/src/components/dashboard/dashboard.jsx" />
         <option value="$PROJECT_DIR$/src/components/login/login.jsx" />
         <option value="$PROJECT_DIR$/src/components/register/register.jsx" />
@@ -137,7 +157,6 @@
         <option value="$PROJECT_DIR$/src/components/Register/register.css" />
         <option value="$PROJECT_DIR$/src/components/writer/writer.css" />
         <option value="$PROJECT_DIR$/src/components/writer/writer.jsx" />
-        <option value="$PROJECT_DIR$/src/components/Login/writerSign/writer.jsx" />
         <option value="$PROJECT_DIR$/src/components/writerReg/writer.jsx" />
         <option value="$PROJECT_DIR$/src/routes/privateRoute.jsx" />
         <option value="$PROJECT_DIR$/src/components/Dashboard/dashboard.css" />
@@ -168,10 +187,12 @@
         <option value="$PROJECT_DIR$/src/components/HomePage/index.js" />
         <option value="$PROJECT_DIR$/src/components/helpers/helpers.js" />
         <option value="$PROJECT_DIR$/src/components/Dashboard/Header.js" />
+        <option value="$PROJECT_DIR$/src/components/Login/writerSign/writer.css" />
+        <option value="$PROJECT_DIR$/src/components/Login/writerSign/writer.jsx" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="77" />
     <option name="y" value="406" />
     <option name="width" value="1400" />
@@ -224,6 +245,21 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="login-logout" type="b2602c69:ProjectViewProjectNode" />
+              <item name="login-logout" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="login-logout" type="b2602c69:ProjectViewProjectNode" />
+              <item name="login-logout" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Login" type="462c0819:PsiDirectoryNode" />
+              <item name="writerSign" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="login-logout" type="b2602c69:ProjectViewProjectNode" />
@@ -305,12 +341,12 @@
       <workItem from="1591619956840" duration="157000" />
       <workItem from="1596449999651" duration="1677000" />
       <workItem from="1598432971713" duration="5601000" />
-      <workItem from="1598509220538" duration="6456000" />
+      <workItem from="1598509220538" duration="8469000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138417000" />
+    <option name="totallyTimeSpent" value="140430000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -332,7 +368,7 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32914925" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.38493723" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.38493723" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -356,19 +392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Login/writerSign/writer.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Login/writerSign/writer.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -712,6 +735,23 @@
           <caret line="57" column="44" lean-forward="true" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Login/writerSign/writer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Login/writerSign/writer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
