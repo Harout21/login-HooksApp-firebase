@@ -60,7 +60,7 @@ class Typewriter extends React.Component {
         return (
             <div className="typewriter">
                 <div className="typewriter__type">
-                    {text.length > 0 ? "":"Hello"}{text}
+                    {!text ? "":"Hello"}{text}
                 </div>
                 <div className="typewriter__cursor"/>
             </div>
