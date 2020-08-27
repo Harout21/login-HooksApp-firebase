@@ -3,11 +3,13 @@ import firebase from "../firebase";
 import 'firebase/auth'
 import NeonClock from "../clock/clock";
 import './home.css'
+import { useHistory } from 'react-router-dom'
 
 
-function HomePage(props) {
+function HomePage() {
+	const history = useHistory();
 	if(!firebase.getCurrentUsername()){
-		props.history.replace('/register')
+		history.replace('/register')
 	}
 
 	return (
@@ -25,7 +27,7 @@ function HomePage(props) {
 			</button>
 			<button
 				type="submit"
-				onClick={()=>props.history.push("/dashboard")}
+				onClick={()=>history.push("/dashboard")}
 				className="button">
 				To Dashboard
 			</button>
@@ -38,7 +40,7 @@ function HomePage(props) {
 	async function logout() {
 		await firebase.logout();
 		sessionStorage.removeItem('token');
-		props.history.push('/login')
+		history.push('/login')
 	}
 }
 

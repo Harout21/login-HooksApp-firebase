@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import firebase from '../firebase'
 import './register.css'
-import  Typewriter from '../writerReg/writer'
+import  Typewriter from '../writerReg/writer';
+import { useHistory } from 'react-router-dom';
 
 
-function Register(props) {
-
+function Register() {
+    const history = useHistory();
 	const [name, setName] = useState('')
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
@@ -50,7 +51,7 @@ function Register(props) {
 			await firebase.addComment(comment);
 			firebase.getCurrentUsername();
 			sessionStorage.setItem("token",firebase.auth.currentUser.refreshToken);
-			props.history.replace('/dashboard')
+			history.replace('/dashboard')
 		} catch(error) {
 			alert(error.message)
 		}

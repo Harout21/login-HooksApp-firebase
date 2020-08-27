@@ -3,11 +3,11 @@ import { Link, withRouter } from 'react-router-dom'
 import firebase from '../firebase'
 import './login.css'
 import Typewriter from "./writerSign/writer";
+import { useHistory } from 'react-router-dom'
 
 
-
-function SignIn(props) {
-
+function SignIn() {
+    const history = useHistory();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
@@ -79,7 +79,7 @@ function SignIn(props) {
 		} catch(error) {
 			alert(error.message)
 		}
-		props.history.replace('/dashboard')
+		history.replace('/dashboard')
 	}
 }
 

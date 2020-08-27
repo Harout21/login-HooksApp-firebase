@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from "react";
-import {Link} from 'react-router-dom'
 import styled from "styled-components";
 import Button from "./Button";
 import firebase from '../firebase'
-import Loading from "../loading/Loading";
+import { useHistory } from 'react-router-dom'
 
 const StyledHeader = styled.header`
   .header__left {
@@ -42,8 +41,8 @@ const StyledHeader = styled.header`
 
 
 
-const Header = ({avatar, hidden, ...props}) => {
-
+const Header = ({avatar, hidden}) => {
+    const history = useHistory();
     const [comment, setComment] = useState('');
     const [editComment, setEditedComment] = useState('');
 
@@ -68,12 +67,12 @@ const Header = ({avatar, hidden, ...props}) => {
     if (!firebase.getCurrentUsername()) {
         // not logged in
         alert('Please login first');
-        props.history.history.history.replace('/login')
+        history.replace('/login')
     }
     return (
         <StyledHeader className={`page__header${hidden ? " hidden" : ""}`}>
             <div className="header__left">
-                <a className="link" href="www.google.com">
+                <div className="link" >
                     <svg
                         width="90"
                         height="26"
@@ -89,7 +88,7 @@ const Header = ({avatar, hidden, ...props}) => {
                             fill="green"
                         />
                     </svg>
-                </a>
+                </div>
             </div>
             <ul className="list actions">
                 <li className="list__item action">
@@ -100,22 +99,19 @@ const Header = ({avatar, hidden, ...props}) => {
                 </li>
 
                 <li className="list__item action">
-                    <h2 style={{color: "black",fontSize:"20px"}}> Your comment: {comment ? `"${comment}"` :
-                        <Loading/>}</h2>
+                    <h2 style={{color: "black",fontSize:"20px"}}> Your comment: {comment ? `"${comment}"` :""}</h2>
                     <input  className="input-comment-hj" autoComplete="off" value={editComment} onChange={e => setEditedComment(e.target.value)}
                             onKeyDown={(e)=>handleKeyDown(e)}   placeholder="Change it"/>
                 </li>
-                <Link
-                to= {"/home"}
-                >
+
                 <Button
+                    onClick={()=> history.push('/home')}
                     style={{marginRight: "20px", backgroundColor: "red"}}
                     type="submit"
                     variant="contained"
                     className="button button--transparent">
                     Home
                 </Button>
-                </Link>
                 <Button
                     style={{backgroundColor: "navy"}}
                     type="submit"
@@ -136,7 +132,7 @@ const Header = ({avatar, hidden, ...props}) => {
     async function logout() {
         await firebase.logout();
         sessionStorage.removeItem('token');
-        props.history.history.history.push('/register')
+        history.push('/register')
     }
 };
 
