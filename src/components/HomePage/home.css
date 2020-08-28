@@ -26,6 +26,11 @@ background-color: #090710;
   margin: 4px 2px 0 743px;
   cursor: pointer;
 }
+.button:hover{
+  color: yellowgreen;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background-color: navy;
+}
 
 @media only screen and (max-width: 960px) {
   .home-text{

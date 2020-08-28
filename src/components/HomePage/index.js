@@ -4,6 +4,8 @@ import 'firebase/auth'
 import NeonClock from "../clock/clock";
 import './home.css'
 import { useHistory } from 'react-router-dom'
+import {IconButton} from "@material-ui/core";
+import ArrowBackIcon from "@material-ui/core/SvgIcon/SvgIcon";
 
 
 function HomePage() {
@@ -15,6 +17,11 @@ function HomePage() {
 	return (
 	<>
 		<div className="home-text">
+			<IconButton onClick={history.goBack}>
+				Go Back
+				<div>
+					<ArrowBackIcon fontSize="large"/></div>
+			</IconButton>
 			<h1>Home {firebase.getCurrentUsername()}</h1>
 			<h3>What`s On Your Mind Today ?</h3>
 		</div>
@@ -24,12 +31,6 @@ function HomePage() {
 				onClick={logout}
 				className="button">
 				Logout
-			</button>
-			<button
-				type="submit"
-				onClick={()=>history.push("/dashboard")}
-				className="button">
-				To Dashboard
 			</button>
 		</div>
 		{

@@ -18,7 +18,6 @@ function Register() {
 			<form  className="login-form" onSubmit={e => e.preventDefault() && false }>
 				<h1 className="mytitle"><Typewriter/></h1>
 				<h2 className="mytext">Welcome To My App Cute</h2>
-
 				<div className="txtb">
 					<input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Username"/>
 				</div>

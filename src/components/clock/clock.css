@@ -601,3 +601,6 @@ span.tick:nth-child(56) {
         box-shadow: 0 0 10px #ff4343;
     }
 }
+.MuiIconButton-label{
+    color:white !important;
+}

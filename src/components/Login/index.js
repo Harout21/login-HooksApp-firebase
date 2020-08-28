@@ -3,8 +3,9 @@ import { Link, withRouter } from 'react-router-dom'
 import firebase from '../firebase'
 import './login.css'
 import Typewriter from "./writerSign/writer";
-import { useHistory } from 'react-router-dom'
-
+import { useHistory } from 'react-router-dom';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import { IconButton } from '@material-ui/core';
 
 function SignIn() {
     const history = useHistory();
@@ -23,7 +24,9 @@ function SignIn() {
 					/>
 					<h2 className="my-title-haro21">Made By Haro21</h2>
 				</div>
-
+				<IconButton title="Back" onClick={history.goBack}>
+					<ArrowBackIcon fontSize="large" title="hello" style={{color:"white"}}/>
+				</IconButton>
 				<div className="LoginBox">
 					<div className="mercury-logologin">
 						<h3 className="mytext"><Typewriter/> </h3>
